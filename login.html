@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion - Motus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Connexion</h2>
+    <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Nom d'utilisateur" required>
+        <input type="password" id="loginPassword" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+    </form>
+    <div id="loginMsg"></div>
+    <script src="motus.js"></script>
+    <script>
+        document.getElementById('loginForm').onsubmit = function(e) {
+            e.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            login(username, password).then(res => {
+                document.getElementById('loginMsg').textContent = res.success ? "Connexion réussie !" : "Identifiants incorrects.";
+                if(res.success) window.location.href = 'index.html';
+            });
+        };
+    </script>
+</body>
+</html>

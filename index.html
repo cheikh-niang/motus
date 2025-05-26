@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motus - Le jeu de mots</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">MOTUS</h1>
+    </header>
+    <div class="nav-bar">
+        <div>
+            <a href="index.php">Accueil</a>
+            <a href="rules.php">Règles</a>
+        </div>
+        <div id="auth-links">
+    <a href="login.html">Connexion</a>
+    <a href="register.html">Inscription</a>
+</div>
+    </div>
+    <div class="main-container">
+        <div class="game-grid" id="gameGrid">
+            <!-- Les lignes et cases seront générées par JavaScript -->
+        </div>
+        <div class="message-container" id="messageContainer"></div>
+        <div class="keyboard" id="keyboard">
+            <!-- Le clavier virtuel sera généré par JavaScript -->
+        </div>
+    </div>
+    <div class="modal" id="gameOverModal">
+        <div class="modal-content">
+            <h2 class="modal-title" id="modalTitle">Félicitations !</h2>
+            <p id="modalMessage">Vous avez trouvé le mot en <span id="attempts">X</span> essais.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="playAgainBtn">Rejouer</button>
+                <button class="btn btn-secondary" id="seeStatsBtn">Voir les statistiques</button>
+            </div>
+        </div>
+    </div>
+    <div class="help-icon" id="helpIcon">?</div>
+    <footer>
+        <p>&copy; 2025 Motus - Le jeu de mots</p>
+    </footer>
+    <script src="motus.js"></script>
+</body>
+</html>

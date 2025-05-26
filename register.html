@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - Motus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Inscription</h2>
+    <form id="registerForm">
+        <input type="text" id="regUsername" placeholder="Nom d'utilisateur" required>
+        <input type="password" id="regPassword" placeholder="Mot de passe" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+    <div id="registerMsg"></div>
+    <script src="motus.js"></script>
+    <script>
+        document.getElementById('registerForm').onsubmit = function(e) {
+            e.preventDefault();
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+            register(username, password).then(res => {
+                document.getElementById('registerMsg').textContent = res.success ? "Inscription réussie !" : "Erreur lors de l'inscription.";
+                if(res.success) window.location.href = 'login.html';
+            });
+        };
+    </script>
+</body>
+</html>
